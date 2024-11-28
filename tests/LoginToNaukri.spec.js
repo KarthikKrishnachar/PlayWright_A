@@ -20,8 +20,11 @@ test('name of test', async ({ page }) => {
     var userName_password = 'meganfoxx';
     //Testdata
 
-    console.log(button_Login_Homepage.isVisible);
-
+    if (await button_Login_Homepage.isVisible()) {
+        console.log('Login button is visible');
+    } else {
+        console.log('Login button is not visible');
+    }
     await button_Login_Homepage.click;
     await textBox_LoginEmail.clear();
     await textBox_LoginEmail.fill(userName_email);
